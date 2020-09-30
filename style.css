@@ -1,0 +1,183 @@
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #AED581;
+  z-index: 999;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 150%;
+}
+
+.logo a {
+  color: #FFFFFF;
+}
+
+.hamburger {
+  text-align: right;
+  height: 70px;
+  line-height: 70px;
+  color: #33691E;
+}
+
+.nav-links {
+  font-size: 125%;
+  letter-spacing: 2px;
+  word-spacing: 25px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  clear: right;
+}
+
+.nav-links a:hover {
+  color: #33691E;
+}
+
+label {
+  margin: auto;
+  font-size: 162.5%;
+  line-height: 70px;
+  display: none;
+  float: right;
+}
+
+#toggle {
+  display: none;
+}
+
+.cover {
+  background: url('https://static01.nyt.com/images/2020/05/10/realestate/01garden-flowers1/01garden-flowers1-videoSixteenByNineJumbo1600-v2.jpg') no-repeat top center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cover p{
+  text-align: center;
+  align-self: center;
+  text-transform: lowercase;
+  text-shadow: 1px 1px #000000;
+  color: #FFFFFF;
+  font-size: 300%;
+}
+
+@media screen and (max-width: 600px) {
+  label {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    text-align: center;
+    background-color: #AED581;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links a:first-child {
+    border-bottom: 2px solid white;
+  }
+
+  .nav-links a {
+    display: block;
+    border: 2px solid white;
+    margin: 2px;
+  }
+
+  #toggle:checked + .nav-links {
+    display: block;
+  }
+}
+
+.how-to {
+  color: #8bc34a;
+  position: relative;
+  text-align: center;
+  font-size: 175%;
+}
+
+.how-to p { color: #8bc34a; }
+
+@media screen and (max-width: 600px) {
+  .how-to {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px 0;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%;
+  margin: auto;
+  background-color: #8bc34a;
+  color: #FFFFFF;
+}
+
+.pad {
+  margin: 0px 0 20px 0;
+  width: 212px;
+  height: 2px;
+  background: white;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.text {
+  flex: 1;
+  padding: 10px 35px;
+  font-size: 100%;
+  color: #33691E;
+  border: none;
+  outline: none;
+  min-width: 150px;
+  border-radius: 30px;
+}
+
+.btn {
+  font-size: 100%;
+  padding: 10px 35px;
+  color: #FFFFFF;
+  background: #CF268A;
+  border: none;
+  outline: none;
+  margin-left: 20px;
+  border-radius: 30px;
+}
+
+@media screen and (max-width:1000px) {
+  .footer-container {
+    max-width: 600px;
+  }
+
+  .footer-right {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .footer-left {
+    width: 100%;
+    text-align: center;
+  }
+}
