@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mass Lottery, Quick Pick</title>
+    <style>
+        body {font-family: 'Verdana', sans-serif;}
+    </style>
+</head>
+
+<body>
+    <h1>Lucky for Life</h1>
+    <script language="javascript">
+
+        // Function to generate random numbers ---------------------------------
+        function generate_nums(start, end){
+            var rndm = Math.floor((Math.random() * end) + start);
+            rndm = parseInt(rndm);
+            return rndm;
+        };
+
+        // Generate winning numbers --------------------------------------------
+        var winners = new Array(5);
+        var i;
+        for(i = 0; i < 5; i++){
+             winners[i] = generate_nums(1, 48);
+        };
+
+        winners = winners.sort(function(a,b) {return a - b});
+        var lucky = generate_nums(1, 18);
+
+
+        // Take user number ----------------------------------------------------
+        input   = prompt("Enter 5 winning numbers separated by a space (1-48)");
+        l_input = prompt("Enter a lucky ball number (1-18)");
+
+        input   = input.split(" ");
+        input   = input.sort(function(a,b) {return a- b});
+
+        document.write("These are your numbers: ");
+        for(i = 0; i < 5; i++){
+            document.write(input[i] + " ");
+        }
+        document.write("<br/>Your Lucky Ball number: " + l_input + "<br/>");
+
+        // Reveal winning numbers ----------------------------------------------
+        document.write("<br/>These are the winning numbers: ");
+        var j;
+        for(j = 0; j < 5; j++){
+            document.write(winners[j] + " ");
+        }
+        document.write("<br/> The winning Lucky Ball number: " + lucky);
+
+        // Compare winning and user numbers ------------------------------------
+        var count;
+        count = 0;
+        document.write("<br/>");
+        var x, y;
+        for(x = 0; x < 5; x++){
+            for (y = 0; y < 5; y++){
+                if(winners[x] == input[y]){
+                    count += 1;
+                }
+            }
+        }
+        var isWinner;
+        if(lucky == l_input){
+            isWinner = true;
+        } else{
+            isWinner = false;
+        }
+
+        // Print results to output ---------------------------------------------
+        document.write("<br/><h2>RESULTS</h2>")
+        document.write("Numbers matched: " + count + ". ");
+        if(isWinner){
+            document.write("Lucky Ball matched! ")
+        } else{
+            document.write("Lucky Ball did not match. ")
+        }
+
+        // Breakdown winnings --------------------------------------------------
+        if(isWinner){
+            if(count == 0){
+                document.write("You win! Your prize is $4.")
+            } else if(count == 1){
+                document.write("You win! Your prize is $6.")
+            } else if(count == 2){
+                document.write("You win! Your prize is $25.")
+            } else if(count == 3){
+                document.write("You win! Your prize is $150.")
+            } else if(count == 4){
+                document.write("You win! Your prize is $5,000.")
+            } else if(count == 5){
+                document.write("You win! Your prize is $7,000 a WEEK for LIFE!")
+            }
+
+        }else if (isWinner == false) {  // no lucky ball
+            if(count == 0){
+                document.write("You lost. ")
+            } else if(count == 1){
+                document.write("You lost. ")
+            } else if(count == 2){
+                document.write("You win! Your prize is $3.")
+            } else if(count == 3){
+                document.write("You win! Your prize is $20.")
+            } else if(count == 4){
+                document.write("You win! Your prize is $200.")
+            } else if(count == 5){
+                document.write("You win! Your prize is $25,000 a YEAR for LIFE!")
+            }
+        }
+    </script>
+
+</body>
+</html>
