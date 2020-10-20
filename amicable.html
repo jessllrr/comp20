@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Amicable Calculator</title>
+    <style>
+        body {font-family: Verdana;}
+    </style>
+</head>
+
+<body>
+    <h1>Amicable Calculator: the calculator that calculates amicable-ness</h1>
+    <form>
+      <label for="num_one">Number One: </label>
+      <input type="text" name="num_one" id="num_one">
+      <br>
+      <label for="num_two">Number Two: </label>
+      <input type="text" name="num_two" id="num_two">
+      <br>
+      <input type="button" value="Check" onclick="isAmicable()">
+    </form>
+    <div id="test-box"></div>
+    <script language="javascript">
+        document.getElementById('button').addEventListener('click', isAmicable);
+        // Implement isFactor() -----------------------------------------------
+        function isFactor(num, factor){
+            if (num % factor == 0) {
+                return true;
+            } else { return false; }
+        };
+
+        // TEST isFactor() ----------------------------------------------------
+        /* var test_one = isFactor(100, 10);
+        if (test) { document.getElementById('test-box').innerHTML ="Test one passed!"; }
+        else      { document.getElementById('test-box').innerHTML ="Test one failed!"; }
+        */
+
+        // IMPLEMENT showArray() ----------------------------------------------
+        function showArray(arr) {
+            for (i = 0; i < arr.length; i++) {
+                document.write(arr[i] + " ")
+            }
+        };
+
+        // TEST showArray() ---------------------------------------------------
+        /* var test_two_arr = [1,2,3,4,5,6,7,8,9,10]
+        showArray(test_two_arr) */
+
+        // IMPLEMENT addArray() -----------------------------------------------
+        function addArray(arr) {
+            var sum = 0;
+            for (i = 0; i < arr.length; i++) {
+                sum = sum + arr[i];
+            }
+            return sum;
+        };
+
+        // TEST addArray() ----------------------------------------------------
+        var test_arr = [1,2,3,4,5]
+        var test_two = addArray(test_arr)
+        if (test_two == 15) { document.write("Test two passed!"); }
+        else                { document.write("Test two failed!"); }
+
+
+        // IMPLEMENT getFactors() ---------------------------------------------
+        function getFactors(num) {
+            var arr = [];
+            for (i = 0; i < num; i++) {
+                if (isFactor(num, i)) {
+                    arr.push(i)
+                }
+            }
+            return arr;
+        };
+
+        // TEST getFactors() --------------------------------------------------
+        var test_thr = 10;
+        var test_fac = getFactors(test_thr)
+        if (test_fac == [1,2,5]) { document.write("Test three passed!"); }
+        else                     { document.write("Test three failed!"); }
+        
+
+        // IMPLEMENT event via isAmicable() -----------------------------------
+        function isAmicable() {
+            var num_one         = document.getElementById('num_one').value;
+            var num_two         = document.getElementById('num_two').value;
+            var num_one_factors = getFactors(num_one);
+            var num_two_factors = getFactors(num_two);
+            var num_one_sum     = addArray(num_one_factors);
+            var num_two_sum     = addArray(num_two_factors);
+
+            if ( (num_one == num_two_sum) && (num_two == num_one_sum)) {
+                alert("Numbers are amicable!")
+            } else {
+                alert("Numbers are not amicable!")
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
