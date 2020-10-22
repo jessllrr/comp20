@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SWAP IT</title>
+    <style>
+        .header {
+            font-family: Verdana, sans-serif;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        input
+        {
+            border-radius: 90px;
+            border: solid 1px black;
+            padding:5px;
+        }
+
+        form {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #txt_one {
+            text-align: center;
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+        }
+        
+        #txt_two {
+            text-align: center;
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+        #btn {
+            width: 60px;
+            border: none;
+            border-radius: 30%;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="header">SWAP IT</div>
+        <form>
+            <input type="text" id="txt_one" name="txt_one" placeholder="Text here..."> 
+            <input type="button" id="btn" value="=>"> 
+            <input type="text" id="txt_two" name="txt_two" placeholder="Text here...">
+        </form>
+        <script>
+            // IMPLEMENT FUNCTION swap_text() ---------------------------------
+            function swap_text () {
+                if (this.value == "=>") {
+                    var val_one = document.getElementById("txt_one").value;
+                    document.getElementById("txt_one").value = "";
+                    document.getElementById("txt_two").value = val_one;
+
+                    this.value  = "<=";
+                } else {
+                    var val_two = document.getElementById("txt_two").value;
+                    document.getElementById("txt_two").value = "";
+                    document.getElementById("txt_one").value = val_two;
+
+                    this.value = "=>";
+                }
+            }
+
+            // CALL swap_text() -----------------------------------------------
+            document.getElementById("btn").addEventListener("click", swap_text);
+
+        </script>
+    </body>
+</html>
