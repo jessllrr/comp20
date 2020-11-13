@@ -1,0 +1,71 @@
+[
+    {
+        "artist" : "Frank Ocean",
+        "title" : "Self Control",
+        "genre" : ["Pop", "R&B"],
+        "release": 2016
+    },
+    
+    {
+        "artist" : "SZA",
+        "title" : "Normal Girl",
+        "genre" : ["Soul", "R&B"],
+        "release" : 2017
+    },
+    
+    {
+        "artist" : "Solange",
+        "title" : "Cranes in the Sky",
+        "genre" : ["Soul", "R&B"],
+        "release" : 2016
+    },
+    
+    {
+        "artist" : "Frank Ocean",
+        "title" : "In My Room",
+        "genre" : ["Pop", "R&B"],
+        "release" : 2019
+    },
+    
+    {
+        "artist" : "Kali Uchis",
+        "title" : "After the Storm",
+        "genre" : ["R&B", "Pop"],
+        "release" : 2018
+    },
+    
+    {
+        "artist" : "Childish Gambino",
+        "title" : "Redbone",
+        "genre" : ["Funk", "Soul"],
+        "release" : 2016
+    },
+    
+    {
+        "artist" : "Tyler, the Creator",
+        "title" : "EARFQUAKE",
+        "genre" : ["Hip-Hop", "Rap"],
+        "release" : 2019
+    },
+    
+    {
+        "artist" : "Tame Impala",
+        "title" : "The Less I Know the Better",
+        "genre" : ["Funk", "Pop"],
+        "release" : 2020
+    },
+    
+    {
+        "artist" : "Leon Bridges",
+        "title" : "Coming Home",
+        "genre" : ["Soul", "R&B"],
+        "release" : 2015
+    },
+    
+    {
+        "artist" : "Leon Bridges",
+        "title" : "River",
+        "genre" : ["Soul", "R&B"],
+        "release" : 2016
+    } 
+]
